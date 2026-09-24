@@ -39,18 +39,21 @@
 </head>
 <body>
 <h1>Peak Jump - Gizlilik Politikası</h1>
-<p class="updated">Son güncelleme: 21 Ağustos 2026</p>
- 
+<p class="updated">Son güncelleme: 24 Eylül 2026</p>
+
 <h2>Giriş</h2>
 <p>
   Peak Jump, kullanıcı gizliliğine önem verir. Bu sayfa, uygulamanın hangi
-  verileri topladığını, bu verilerin nerede saklandığını ve isteğinizde
-  hesabınızın/verilerinizin nasıl silineceğini açıklar. Uygulama içindeki
-  bazı veriler yalnızca cihazınızda saklanırken, bazı veriler (bulut yedek
-  kaydı, liderlik tablosu, bildirim aboneliği gibi) Google Firebase
-  altyapısı üzerinden bir sunucuda saklanır.
+  verileri topladığını, bu verilerin nerede saklandığını, hangi üçüncü
+  taraflarla paylaşıldığını ve isteğinizde hesabınızın/verilerinizin nasıl
+  silineceğini açıklar. Uygulama içindeki bazı veriler yalnızca cihazınızda
+  saklanırken, bazı veriler (bulut yedek kaydı, liderlik tablosu, bildirim
+  aboneliği gibi) Google Firebase altyapısı üzerinden bir sunucuda saklanır.
+  Reklam kampanyalarının ölçümü için bazı kullanım verileri Meta
+  (Facebook) ile de paylaşılır (bkz. aşağıdaki "Meta (Facebook) Uygulama
+  Olayları" bölümü).
 </p>
- 
+
 <h2>Cihazınızda Yerel Olarak Saklanan Veriler</h2>
 <p>
   Aşağıdaki veriler cihazınızda yerel olarak (Hive veritabanı kullanılarak)
@@ -58,16 +61,18 @@
 </p>
 <ul>
   <li>Oyun skorları ve ilerleme durumu</li>
-  <li>Coin/elmas bakiyeleri, satın alınan/kazanılan kozmetik öğeler</li>
+  <li>Coin/elmas bakiyeleri, satın alınan/kazanılan kozmetik öğeler ve kuş
+    yoldaşlar</li>
   <li>Kendi seçtiğiniz oyuncu adı (görünen isim)</li>
   <li>Bildirim ve dil tercihleriniz</li>
 </ul>
- 
+
 <h2>Sunucuda (Google Firebase) Saklanan Veriler</h2>
 <p>
   Uygulama isteğe bağlı özellikler (bulut yedekleme, liderlik tablosu, push
-  bildirimleri) için Google Firebase altyapısını kullanır. Bu özellikler
-  etkinken aşağıdaki veriler Firebase sunucularına iletilir:
+  bildirimleri, uygulama içi satın almalar) için Google Firebase
+  altyapısını kullanır. Bu özellikler etkinken aşağıdaki veriler Firebase
+  sunucularına iletilir:
 </p>
 <ul>
   <li>
@@ -79,9 +84,9 @@
   </li>
   <li>
     <strong>Bulut yedek kaydı</strong> — skorunuz, seviye ilerlemeniz,
-    coin/elmas bakiyeniz, sahip olduğunuz kozmetikler, başarım durumunuz ve
-    en iyi günlük ödül seriniz, cihazlar arası senkronizasyon için
-    sunucuda saklanır.
+    coin/elmas bakiyeniz, sahip olduğunuz kozmetikler ve kuş yoldaşlar,
+    başarım durumunuz ve en iyi günlük ödül seriniz, cihazlar arası
+    senkronizasyon için sunucuda saklanır.
   </li>
   <li>
     <strong>Liderlik tablosu</strong> — haftalık liderlik tablosuna
@@ -96,6 +101,14 @@
     saklanır.
   </li>
   <li>
+    <strong>Satın alma doğrulama kaydı</strong> — uygulama içi bir satın
+    alma yaptığınızda, satın almanın gerçek olduğunu Google Play üzerinden
+    doğrulamak ve aynı satın almanın iki kez ödüllendirilmesini önlemek
+    için satın alma belirteci, satın alınan ürün, anonim hesap kimliğiniz
+    ve doğrulama zamanı sunucuda saklanır (bkz. "Uygulama İçi Satın
+    Almalar").
+  </li>
+  <li>
     <strong>Çökme ve hata raporları</strong> — uygulama teknik bir hatayla
     karşılaşırsa, sorunu teşhis etmemize yardımcı olacak teknik bilgiler
     (Firebase Crashlytics ile) sunucuya iletilir. Bu raporlar kişisel
@@ -103,11 +116,42 @@
   </li>
   <li>
     <strong>Uygulama içi kullanım istatistikleri</strong> — hangi
-    ekranları açtığınız, öğreticiyi tamamlayıp tamamlamadığınız gibi genel
-    kullanım event'leri (Firebase Analytics ile) anonim olarak toplanır.
+    ekranları açtığınız, öğreticiyi tamamlayıp tamamlamadığınız, oyun
+    başlangıç/bitiş olayları ve skorunuz gibi genel kullanım event'leri
+    (Firebase Analytics ile) anonim olarak toplanır. Aynı event'ler reklam
+    ölçümü için Meta'ya da iletilir (bkz. aşağıdaki bölüm).
   </li>
 </ul>
- 
+
+<h2>Meta (Facebook) Uygulama Olayları</h2>
+<p>
+  Uygulama, Instagram/Facebook'ta yürüttüğümüz reklam kampanyalarının
+  işe yarayıp yaramadığını ölçebilmek için Meta Platforms'un Facebook SDK'sını
+  (App Events) kullanır. Bu SDK aracılığıyla Meta'ya şu veriler iletilir:
+</p>
+<ul>
+  <li>Cihazınızın reklam kimliği (Android Reklam Kimliği) ve temel cihaz
+    bilgileri (cihaz modeli, işletim sistemi ve uygulama sürümü, dil,
+    IP adresi gibi teknik veriler)</li>
+  <li>Uygulama olayları: uygulamanın açılması, oyun başlangıcı ve bitişi
+    (skor, oyun süresi gibi), öğretici tamamlama, market/liderlik tablosu
+    açılması, reklam izleme ve satın alma olayları</li>
+</ul>
+<p>
+  Bu veriler, bir reklamı görüp uygulamayı yükleyen kullanıcı sayısını
+  ölçmek ve reklam kampanyalarını iyileştirmek amacıyla kullanılır. Meta bu
+  verileri kendi gizlilik politikasına göre işler:
+  <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">
+    Meta Gizlilik Politikası
+  </a>.
+</p>
+<p>
+  Reklam kimliğinizin bu amaçla kullanılmasını istemiyorsanız, Android
+  cihazınızda Ayarlar → Google → Reklamlar (bazı cihazlarda Ayarlar →
+  Gizlilik → Reklamlar) bölümünden reklam kimliğinizi silebilir veya
+  sıfırlayabilirsiniz.
+</p>
+
 <h2>Google Play Games Services</h2>
 <p>
   Ayarlar'dan isteğe bağlı olarak Google Play Games hesabınızı
@@ -115,35 +159,47 @@
   olmasını sağlar. Bağlanmazsanız uygulama tamamen anonim olarak
   çalışmaya devam eder.
 </p>
- 
+
+<h2>Uygulama İçi Satın Almalar</h2>
+<p>
+  Coin paketleri ve kuş yoldaşlar gibi isteğe bağlı satın almalar Google
+  Play Faturalandırma üzerinden yapılır. Ödeme bilgileriniz (kart bilgisi
+  vb.) tamamen Google tarafından işlenir; bu bilgiler bize hiçbir şekilde
+  iletilmez. Satın almanın doğrulanması için yalnızca yukarıda
+  "Satın alma doğrulama kaydı" altında belirtilen veriler saklanır.
+</p>
+
 <h2>Reklamlar</h2>
 <p>
   Uygulama, Google AdMob (Google Mobile Ads SDK) aracılığıyla isteğe bağlı
-  ödüllü video reklamlar gösterir (oyun sonunda devam etme ve bonus coin
-  kazanma seçenekleri). AdMob, reklam sunumu için cihaz/reklam
-  kimlikleri gibi teknik verileri kendi gizlilik politikasına göre
-  işleyebilir:
+  ödüllü video reklamlar gösterir (oyun sonunda devam etme, bonus coin
+  kazanma ve coin ikiye katlama seçenekleri). AdMob, reklam sunumu için
+  cihaz/reklam kimlikleri gibi teknik verileri kendi gizlilik politikasına
+  göre işleyebilir:
   <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
     Google Gizlilik Politikası
   </a>.
 </p>
- 
+
 <h2>Kişisel Veri</h2>
 <p>
   Uygulama; gerçek adınız, e-posta adresiniz, konumunuz veya telefon
   numaranız gibi kişisel veri istemez ya da toplamaz. Oyun içinde
   girdiğiniz oyuncu adı tamamen kendi seçiminizdir ve gerçek kimliğinizle
-  ilişkilendirilmez.
+  ilişkilendirilmez. Bununla birlikte, yukarıda açıklandığı gibi reklam
+  ve ölçüm hizmetleri (Google AdMob, Meta) cihazınızın reklam kimliği
+  gibi cihaz kimliklerini işleyebilir.
 </p>
- 
+
 <h2>Veri Güvenliği</h2>
 <p>
   Sunucuya iletilen tüm veriler aktarım sırasında şifrelenir (HTTPS/TLS).
   Bulut yedek kaydınıza ve liderlik tablosu kaydınıza yalnızca kendi
   hesabınız erişebilir; sunucu tarafı erişim kuralları bunu teknik olarak
-  zorunlu kılar.
+  zorunlu kılar. Satın alma doğrulama kayıtlarına ise yalnızca sunucu
+  erişebilir, uygulama tarafından okunamaz.
 </p>
- 
+
 <h2 id="hesap-silme">Hesap ve Veri Silme</h2>
 <p>
   Bulut yedek kaydınızı, liderlik tablosu kaydınızı, bildirim aboneliğinizi
@@ -168,36 +224,56 @@
 <h3>Silinen ve saklanan veriler</h3>
 <p>
   Silme talebi işleme alındığında şunlar kalıcı olarak silinir: bulut
-  yedek kaydınız (skor, ilerleme, coin/elmas, kozmetik, başarım verisi),
-  o anki haftaya ait liderlik tablosu kaydınız, push bildirim
-  aboneliğiniz (cihaz belirteci dahil) ve hesap kimliğiniz. Bu veriler
-  için ek bir saklama süresi yoktur - talebiniz alındığında en geç 30
-  gün içinde tamamen silinmiş olur.
+  yedek kaydınız (skor, ilerleme, coin/elmas, kozmetik, kuş yoldaş,
+  başarım verisi), o anki haftaya ait liderlik tablosu kaydınız, push
+  bildirim aboneliğiniz (cihaz belirteci dahil) ve hesap kimliğiniz. Bu
+  veriler için ek bir saklama süresi yoktur - talebiniz alındığında en geç
+  30 gün içinde tamamen silinmiş olur.
 </p>
 <p>
-  Silme talebinden ÖNCE toplanmış olan anonim kullanım istatistikleri
-  (Firebase Analytics) ve çökme raporları (Firebase Crashlytics) geriye
-  dönük olarak silinmez. Bu veriler kişisel kimliğinizle
-  ilişkilendirilemez ve Google'ın Firebase için uyguladığı standart veri
-  saklama sürelerine tabidir (bkz. aşağıdaki Google Gizlilik Politikası).
+  Aşağıdaki veriler bu işlemle silinmez:
 </p>
- 
+<ul>
+  <li>Silme talebinden ÖNCE toplanmış anonim kullanım istatistikleri
+    (Firebase Analytics) ve çökme raporları (Firebase Crashlytics). Bu
+    veriler kişisel kimliğinizle ilişkilendirilemez ve Google'ın Firebase
+    için uyguladığı standart veri saklama sürelerine tabidir.</li>
+  <li>Satın alma doğrulama kayıtları. Aynı satın almanın tekrar
+    ödüllendirilmesini önlemek için saklanır; hesabınız silindikten sonra
+    içlerindeki anonim hesap kimliği artık hiçbir hesaba karşılık
+    gelmez.</li>
+  <li>Meta'ya daha önce iletilmiş uygulama olayları. Bu veriler Meta'nın
+    saklama sürelerine tabidir; Meta'nın bu verilere ilişkin haklarınızı
+    nasıl kullanabileceğinizi açıklayan
+    <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">
+      Meta Gizlilik Politikası
+    </a>'na başvurabilirsiniz.</li>
+</ul>
+
 <h2>Üçüncü Taraf Hizmetler</h2>
 <p>
   Uygulama şu Google hizmetlerini kullanır: Firebase (Authentication,
   Firestore, Cloud Functions, Cloud Messaging, Crashlytics, Analytics,
-  App Check, Remote Config), Google Play Games Services ve Google AdMob.
-  Bu hizmetlerin veri işleme uygulamaları hakkında daha fazla bilgi için:
+  App Check, Remote Config), Google Play Games Services, Google Play
+  Faturalandırma ve Google AdMob. Bu hizmetlerin veri işleme uygulamaları
+  hakkında daha fazla bilgi için:
   <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
     Google Gizlilik Politikası
   </a>.
 </p>
- 
+<p>
+  Uygulama ayrıca Meta Platforms'un Facebook SDK'sını (App Events)
+  kullanır:
+  <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener">
+    Meta Gizlilik Politikası
+  </a>.
+</p>
+
 <h2>İletişim</h2>
 <p>
   Sorularınız için: <a href="mailto:omer.faruk.kc03@gmail.com">omer.faruk.kc03@gmail.com</a>
 </p>
- 
+
 <h2>Değişiklikler</h2>
 <p>
   Bu gizlilik politikası zaman zaman güncellenebilir. Önemli değişiklikler
